@@ -3,20 +3,21 @@
 #include <pthread.h>
 #include "common_threads.h"
 
-sem_t s; 
+dispatch_semaphore_t sem;
 
 void *child(void *arg) {
+    sleep(1);
     printf("child\n");
-    // use semaphore here
+    Sem_post(sem);
     return NULL;
 }
 
 int main(int argc, char *argv[]) {
     pthread_t p;
     printf("parent: begin\n");
-    // init semaphore here
+    sem = Sem_create(0);
     Pthread_create(&p, NULL, child, NULL);
-    // use semaphore here
+    Sem_wait(sem);
     printf("parent: end\n");
     return 0;
 }
