@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
     sem = Sem_create(0);
     Pthread_create(&p, NULL, child, NULL);
     Sem_wait(sem);
+    Sem_close(sem);
     printf("parent: end\n");
     return 0;
 }

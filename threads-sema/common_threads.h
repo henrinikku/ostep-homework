@@ -30,5 +30,6 @@
 #define Sem_create(value)                                dispatch_semaphore_create(value);
 #define Sem_wait(sem)                                    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
 #define Sem_post(sem)                                    dispatch_semaphore_signal(sem);
+#define Sem_close(sem)                                   dispatch_release(sem);
 
 #endif // __common_threads_h__
