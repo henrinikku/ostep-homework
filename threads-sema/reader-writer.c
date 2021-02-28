@@ -67,6 +67,7 @@ void *reader(void *arg)
     for (i = 0; i < loops; i++)
     {
         rwlock_acquire_readlock(&lock);
+        sleep(1);
         printf("read %d\n", value);
         rwlock_release_readlock(&lock);
     }
