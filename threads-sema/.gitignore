@@ -1,2 +1,9 @@
 fork-join
+rendezvous
+mutex-nostarve
+reader-writer
+reader-writer-nostarve
+
 .idea
+.vscode
+*.dSYM
